@@ -11,8 +11,19 @@ Run on GCP VM (Linux):
 
 import os
 import sys
+
+# CRITICAL: Disable OneDNN/MKLDNN before importing paddle (fixes PaddlePaddle 3.x bug)
+os.environ["FLAGS_use_mkldnn"] = "0"
+os.environ["FLAGS_use_onednn"] = "0" 
+os.environ["MKLDNN_CACHE_CAPACITY"] = "0"
+os.environ["DNNL_VERBOSE"] = "0"
+
 import re
 from typing import Dict, List, Tuple, Optional
+
+# Set device to CPU without OneDNN
+import paddle
+paddle.set_device('cpu')
 
 from paddleocr import PaddleOCR
 
