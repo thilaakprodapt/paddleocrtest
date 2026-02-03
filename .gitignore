@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.venv310/
+paddleocr_env/
+*.egg-info/
+dist/
+build/
+
+# PaddleOCR models (will be downloaded on first run)
+.paddleocr/
+.paddlex/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test outputs
+*.log
+output/
